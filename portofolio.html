@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <title>Portfolio Yafao</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f9fafb;
+        }
+        /* Animations */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        @keyframes fadeInRight {
+            0% {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .fadeInUp {
+            animation: fadeInUp 0.8s ease forwards;
+            opacity: 0;
+        }
+        .fadeInLeft {
+            animation: fadeInLeft 0.8s ease forwards;
+            opacity: 0;
+        }
+        .fadeInRight {
+            animation: fadeInRight 0.8s ease forwards;
+            opacity: 0;
+        }
+
+        /* Stagger animation delay */
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+        .delay-400 {
+            animation-delay: 0.4s;
+        }
+        .delay-500 {
+            animation-delay: 0.5s;
+        }
+        .delay-600 {
+            animation-delay: 0.6s;
+        }
+        .delay-700 {
+            animation-delay: 0.7s;
+        }
+
+        /* Navbar enhanced hover color */
+        nav a:hover {
+            color: #ef4444; /* Tailwind's red-500 for lively accent */
+        }
+
+        /* Button gradient */
+        .btn-gradient {
+            background: linear-gradient(90deg, #9333ea 0%, #f43f5e 100%);
+        }
+        .btn-gradient:hover {
+            background: linear-gradient(90deg, #f43f5e 0%, #9333ea 100%);
+        }
+
+        /* Project card hover effect with subtle scale and shadow */
+        .project-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 20px rgba(244, 63, 94, 0.25);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        /* Social icons hover in vivid colors */
+        .social-github:hover {
+            color: #6ee7b7; /* emerald-300 */
+        }
+        .social-facebook:hover {
+            color: #3b82f6; /* blue-500 */
+        }
+        .social-instagram:hover {
+            color: #f97316; /* orange-500 */
+        }
+    </style>
+</head>
+<body class="text-gray-900">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md fixed w-full z-30">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a class="text-2xl font-bold text-[#9333ea] hover:text-[#f43f5e] transition-colors duration-300" href="#">PORTOFOLIO</a>
+            <div class="hidden md:flex space-x-8 font-semibold">
+                <a class="text-gray-700 hover:text-[#ef4444] transition-colors duration-300" href="#about">About</a>
+                <a class="text-gray-700 hover:text-[#ef4444] transition-colors duration-300" href="#skills">Skills</a>
+                <a class="text-gray-700 hover:text-[#ef4444] transition-colors duration-300" href="#projects">Projects</a>
+                <a class="text-gray-700 hover:text-[#ef4444] transition-colors duration-300" href="#contact">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button class="focus:outline-none" id="menu-btn">
+                    <i class="fas fa-bars text-2xl text-gray-700"></i>
+                </button>
+            </div>
+        </div>
+        <div class="hidden md:hidden bg-white shadow-md" id="mobile-menu">
+            <a class="block px-6 py-3 border-b border-gray-200 hover:bg-[#fef2f2] transition-colors" href="#about">About</a>
+            <a class="block px-6 py-3 border-b border-gray-200 hover:bg-[#fef2f2] transition-colors" href="#skills">Skills</a>
+            <a class="block px-6 py-3 border-b border-gray-200 hover:bg-[#fef2f2] transition-colors" href="#projects">Projects</a>
+            <a class="block px-6 py-3 hover:bg-[#fef2f2] transition-colors" href="#contact">Contact</a>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <header class="pt-24 bg-gradient-to-r from-[#9333ea] via-[#a855f7] to-[#f43f5e] text-white">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center md:space-x-12">
+            <div class="md:w-1/2 text-center md:text-left fadeInLeft">
+                <h1 class="text-5xl font-extrabold leading-tight drop-shadow-lg">Hi, I'm Yafao Mabe Lamboe</h1>
+                <p class="mt-4 text-xl drop-shadow-md">A passionate Fullstack Developer crafting beautiful and functional websites.</p>
+                <a href="#contact" class="inline-block mt-6 px-8 py-3 rounded-md font-semibold btn-gradient shadow-lg transform transition duration-500 hover:scale-105">
+                    Contact Me
+                </a>
+            </div>
+            <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center fadeInRight">
+                <img alt="Portrait of a young man with short hair and glasses smiling in front of a modern office background" class="rounded-full w-64 h-64 object-cover shadow-2xl border-4 border-white" height="400" loading="lazy" src="img/myfoto.jpg" width="400"/>
+            </div>
+        </div>
+    </header>
+    <!-- About Section -->
+    <section class="max-w-7xl mx-auto px-6 py-20 bg-white rounded-lg shadow-lg mt-12 fadeInUp">
+        <h2 class="text-4xl font-extrabold text-gradient bg-clip-text text-transparent bg-gradient-to-r from-[#9333ea] to-[#f43f5e] mb-8 text-center">
+            About Me
+        </h2>
+        <div class="max-w-4xl mx-auto text-gray-800 text-lg leading-relaxed">
+            <p>
+                Halo! Saya seorang profesional di bidang Teknologi Informasi dengan semangat besar dalam menciptakan solusi digital yang inovatif dan efisien. Dengan keahlian dalam pengembangan perangkat lunak, manajemen proyek IT, serta pemahaman mendalam tentang teknologi terbaru, saya berkomitmen untuk membantu perusahaan dan klien meraih tujuan bisnis mereka melalui teknologi. Kreativitas, kecepatan belajar, dan ketajaman analisa masalah menjadi nilai utama yang saya bawa dalam setiap proyek yang saya kerjakan. Saya terus berkembang mengikuti tren teknologi agar dapat memberikan hasil terbaik dan relevan di era digital saat ini.
+            </p>
+            <p class="mt-4">
+                Tujuan saya adalah menjadi tenaga ahli IT yang berpengaruh dan inovatif, mampu merancang dan mengimplementasikan solusi teknologi yang mendorong transformasi digital dan memperkuat daya saing bisnis. Saya berkomitmen untuk terus mengasah kemampuan teknis dan kepemimpinan, beradaptasi dengan perkembangan teknologi terbaru, serta berkontribusi dalam tim yang kreatif dan dinamis untuk menciptakan produk dan layanan teknologi yang berdampak besar bagi masyarakat dan industri.
+            </p>
+        </div>
+    </section>
+    <!-- Skills Section -->
+    <section class="bg-gradient-to-r from-[#fce7f3] via-[#fde68a] to-[#fbbf24] py-20 mt-20 rounded-lg fadeInUp">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-extrabold text-[#b45309] mb-12 text-center drop-shadow-md">Skills</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-10 max-w-5xl mx-auto text-center">
+                <div class="flex flex-col items-center hover:scale-110 transition-transform duration-300">
+                    <img alt="JavaScript logo" class="mb-3" height="64" loading="lazy" src="https://storage.googleapis.com/a1aa/image/52df2cc7-7d26-4011-787b-4377f272aa18.jpg" width="64"/>
+                    <span class="font-semibold text-[#92400e]">JavaScript</span>
+                </div>
+                <div class="flex flex-col items-center hover:scale-110 transition-transform duration-300">
+                    <img alt="React logo" class="mb-3" height="64" loading="lazy" src="https://storage.googleapis.com/a1aa/image/c1c9bcf9-a2a8-4716-889c-c54898aaeeb6.jpg" width="64"/>
+                    <span class="font-semibold text-[#92400e]">React</span>
+                </div>
+                <div class="flex flex-col items-center hover:scale-110 transition-transform duration-300">
+                    <img alt="Vue.js logo" class="mb-3" height="64" loading="lazy" src="https://storage.googleapis.com/a1aa/image/c1d531f3-d4f6-41c7-6f3c-dfab765cdc2a.jpg" width="64"/>
+                    <span class="font-semibold text-[#92400e]">Vue.js</span>
+                </div>
+                <div class="flex flex-col items-center hover:scale-110 transition-transform duration-300">
+                    <img alt="HTML5 logo" class="mb-3" height="64" loading="lazy" src="https://storage.googleapis.com/a1aa/image/3043e026-210f-4a13-9616-a5a90c4678bf.jpg" width="64"/>
+                    <span class="font-semibold text-[#92400e]">HTML5</span>
+                </div>
+                <div class="flex flex-col items-center hover:scale-110 transition-transform duration-300">
+                    <img alt="CSS3 logo" class="mb-3" height="64" loading="lazy" src="https://storage.googleapis.com/a1aa/image/e4fc0dc6-97b2-443e-b1d5-ee821c8d0426.jpg" width="64"/>
+                    <span class="font-semibold text-[#92400e]">CSS3</span>
+                </div>
+                <div class="flex flex-col items-center hover:scale-110 transition-transform duration-300">
+                    <img alt="Tailwind CSS logo" class="mb-3" height="64" loading="lazy" src="https://storage.googleapis.com/a1aa/image/36d75cdd-255c-4f75-6594-c50b44a4eb0d.jpg" width="64"/>
+                    <span class="font-semibold text-[#92400e]">Tailwind CSS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Projects Section -->
+    <section class="max-w-7xl mx-auto px-6 py-20 mt-20 fadeInUp">
+        <h2 class="text-4xl font-extrabold text-[#9333ea] mb-12 text-center drop-shadow-md">Projects</h2>
+        <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+            <article class="bg-white rounded-lg shadow-md overflow-hidden transition-transform project-card">
+                <img alt="E-commerce website homepage" class="w-full h-48 object-cover" loading="lazy" src="img/project1.png"/>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-[#9333ea] mb-2">School Website SMK Kasih Karunia</h3>
+                    <p class="text-gray-700 mb-4">Developed a fully responsive school website with system information, data alumni, and UI/UX functionality using PHP, Tailwind CSS, and Laravel.</p>
+                    <a class="text-[#f43f5e] font-semibold hover:underline inline-flex items-center" href="#">View Project <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+            </article>
+            <article class="bg-white rounded-lg shadow-md overflow-hidden transition-transform project-card">
+                <img alt="Portfolio website" class="w-full h-48 object-cover" loading="lazy" src="img/project2.png"/>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-[#9333ea] mb-2">Mobile App</h3>
+                    <p class="text-gray-700 mb-4">Created a minimalist KERJUNAS CUP website and mobile app using framework IONIC.</p>
+                    <a class="text-[#f43f5e] font-semibold hover:underline inline-flex items-center" href="#">View Project <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+            </article>
+            <article class="bg-white rounded-lg shadow-md overflow-hidden transition-transform project-card">
+                <img alt="Analytics Dashboard" class="w-full h-48 object-cover" loading="lazy" src="img/project3.png"/>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-[#9333ea] mb-2">System Information SMP-TELADAN MEDAN</h3>
+                    <p class="text-gray-700 mb-4">I HAVE MADE AN INFORMATION SYSTEM FOR MANAGING STUDENT AND TEACHER DATA USING THE LARAVEL FRAMEWORK WITH THE PROGRAMMING LANGUAGES PHP, HTML, JAVASCRIPT, AND TAILWINDCSS</p>
+                    <a class="text-[#f43f5e] font-semibold hover:underline inline-flex items-center" href="#">View Project <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+            </article>
+            <article class="bg-white rounded-lg shadow-md overflow-hidden transition-transform project-card">
+                <img alt="Tech Blog" class="w-full h-48 object-cover" loading="lazy" src="img/project4.png"/>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-[#9333ea] mb-2">KAMPUS MENGAJAR/MERDEKA BELAJAR</h3>
+                    <p class="text-gray-700 mb-4">was once a teacher partner at the independent learning teaching campus, the independent learning program of the Ministry of Education and Culture of the Republic of Indonesia</p>
+                    <a class="text-[#f43f5e] font-semibold hover:underline inline-flex items-center" href="#">View Project <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+            </article>
+            <article class="bg-white rounded-lg shadow-md overflow-hidden transition-transform project-card">
+                <img alt="App Landing Page" class="w-full h-48 object-cover" loading="lazy" src="img/project5.png"/>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-[#9333ea] mb-2">STUDENT YOUTH FOR HUMAN RIGHT INTERNATIONAL</h3>
+                    <p class="text-gray-700 mb-4">I was once a participant in the human rights cooperation between the United States and Indonesia which was centered in America and located in Indonesia, namely Pontianak, the agency that carried it out was the Virtual Education Academy.</p>
+                    <a class="text-[#f43f5e] font-semibold hover:underline inline-flex items-center" href="#">View Project <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+            </article>
+            <article class="bg-white rounded-lg shadow-md overflow-hidden transition-transform project-card">
+                <img alt="Custom CMS" class="w-full h-48 object-cover" loading="lazy" src="img/project6.png"/>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-[#9333ea] mb-2">CHAIRMAN OF THE ITB INDONESIA CHRISTIAN STUDENTS ASSOCIATION</h3>
+                    <p class="text-gray-700 mb-4">I was once the chairman of the Christian student association at an institute called ITB Indonesia</p>
+                    <a class="text-[#f43f5e] font-semibold hover:underline inline-flex items-center" href="#">View Project <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+            </article>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section class="bg-gradient-to-r from-[#9333ea] via-[#f43f5e] to-[#fb7185] py-20 mt-20 rounded-lg shadow-lg text-white fadeInUp">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-extrabold mb-8 drop-shadow-lg">Get In Touch</h2>
+            <p class="mb-6 text-lg drop-shadow-md">Feel free to reach out via WhatsApp!</p>
+            <a href="https://wa.me/6282272463816" target="_blank" rel="noopener" class="inline-block px-10 py-4 text-lg font-bold rounded-md bg-white text-[#9333ea] shadow-lg hover:bg-[#f3e8ff] transition duration-300 transform hover:scale-105">
+                Contact Me on WhatsApp
+            </a>
+            <div class="mt-12 flex justify-center space-x-10 text-3xl">
+                <a aria-label="GitHub" href="https://github.com/Yafaooo" rel="noopener" target="_blank" class="social-github text-white hover:text-emerald-300 transition-colors duration-300">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a aria-label="Facebook" href="https://www.facebook.com/YafaomabeLamboe" rel="noopener" target="_blank" class="social-facebook text-white hover:text-blue-500 transition-colors duration-300">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a aria-label="Instagram" href="https://www.instagram.com/yafaooo_" rel="noopener" target="_blank" class="social-instagram text-white hover:text-orange-500 transition-colors duration-300">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-white py-6 mt-20 shadow-inner">
+        <div class="max-w-7xl mx-auto px-6 text-center text-gray-500 text-sm">
+            © 2025 Yafao. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Run animations on scroll - simple basic approach
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top <= (window.innerHeight || document.documentElement.clientHeight) - 100
+            );
+        }
+
+        function animateOnScroll() {
+            const fadeIns = document.querySelectorAll('.fadeInUp, .fadeInLeft, .fadeInRight');
+            fadeIns.forEach(el => {
+                if (isInViewport(el)) {
+                    el.style.opacity = '1';
+                    el.style.animationPlayState = 'running';
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
+
