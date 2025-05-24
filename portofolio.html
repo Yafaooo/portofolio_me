@@ -314,8 +314,14 @@
 <!-- Banner Ucapan -->
 <div id="birthday-banner" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-pink-500 text-white px-8 py-4 rounded-2xl shadow-lg text-3xl z-50 cursor-pointer opacity-0 scale-0 transition-all duration-700">
     🎉 Selamat Ulang Tahun! 🎂<br>
+    <span class="text-base mt-2 block">24 MEI 2002 - 24 MEI 2025</span>
     <span class="text-base mt-2 block">Klik untuk mulai lagu 🎶</span>
 </div>
+
+<!-- Tombol Kirim Ucapan -->
+<button id="whatsapp-btn" class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full shadow-lg z-50 text-lg transition-all duration-300 hidden">
+    💬 Kirim Ucapan
+</button>
 
 <!-- Confetti CDN -->
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
@@ -324,8 +330,9 @@
 window.addEventListener("DOMContentLoaded", () => {
     const audio = document.getElementById("birthday-sound");
     const banner = document.getElementById("birthday-banner");
+    const whatsappBtn = document.getElementById("whatsapp-btn");
 
-    // Tampilkan banner dengan animasi fade & scale
+    // Tampilkan banner dengan animasi
     setTimeout(() => {
         banner.classList.remove("opacity-0", "scale-0");
         banner.classList.add("opacity-100", "scale-100");
@@ -339,13 +346,22 @@ window.addEventListener("DOMContentLoaded", () => {
         });
     }, 500);
 
-    // Saat banner diklik
+    // Klik banner untuk mulai lagu
     banner.addEventListener("click", () => {
         audio.play();
-        banner.remove(); // Hilangkan ucapan setelah diklik
+        banner.remove();
+        whatsappBtn.classList.remove("hidden"); // Tampilkan tombol WhatsApp
+    });
+
+    // Klik tombol WhatsApp untuk kirim ucapan
+    whatsappBtn.addEventListener("click", () => {
+        const phone = "6282272463816";
+        const message = encodeURIComponent("Selamat ulang tahun! 🎉 Semoga panjang umur dan bahagia selalu! 🥳");
+        window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
     });
 });
 </script>
+
 
 
 
